@@ -2,3 +2,4 @@
 Dummy repo to test git stuff
 MY CHANGE in newbr
 change 1
+change 2
