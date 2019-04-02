@@ -1,10 +1,3 @@
----
-name: Default pull request
-about: Some generic change
-title: ''
-labels: ''
-
----
 ### Please check if the PR fulfills these requirements
 - [ ] The commit message follows our guidelines
 - [ ] Tests for the changes have been added (for bug fixes / features)
