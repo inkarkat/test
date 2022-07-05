@@ -11,3 +11,4 @@ MY CHANGE in newbr
 unrelated change
 change 1
 change 2
+foo
