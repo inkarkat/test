@@ -15,3 +15,4 @@ foo
 bar
 regular
 this will be fast-forwarded
+a single addition
