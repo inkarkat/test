@@ -14,3 +14,4 @@ change 2
 foo
 bar
 regular
+this will be fast-forwarded
