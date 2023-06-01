@@ -1,3 +1,4 @@
+CONFLICTING
 B-series readme change
 # test
 Dummy repo to test git stuff
