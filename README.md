@@ -20,3 +20,4 @@ this will be fast-forwarded
 a single addition
 A-series readme change
 More A-series stuff
+CONFLICTING
