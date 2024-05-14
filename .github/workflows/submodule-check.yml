@@ -16,3 +16,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN || github.token }}
       - uses: inkarkat/git-supersubinout@master
+        id: supersubinout
+        with:
+          fail-on-differences: true
+      - name: Check summary
+        if: failure()
+        run: |
+          printf '%s\n' "${{ steps.supersubinout.outputs.logs }}" >> "$GITHUB_STEP_SUMMARY"
+        shell: bash
