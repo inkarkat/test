@@ -20,7 +20,8 @@ jobs:
         with:
           fail-on-differences: true
       - name: Check summary
-        if: failure()
+        if: >-
+          (success() || failure()) && fromJSON(steps.supersubinout.outputs.differences-found)
         run: |
           cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
           ${{ steps.supersubinout.outputs.markdown-logs }}
