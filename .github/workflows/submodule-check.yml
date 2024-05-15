@@ -22,5 +22,7 @@ jobs:
       - name: Check summary
         if: failure()
         run: |
-          printf '%s\n' "${{ steps.supersubinout.outputs.markdown-logs }}" >> "$GITHUB_STEP_SUMMARY"
+          cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          ${{ steps.supersubinout.outputs.markdown-logs }}
+          EOF
         shell: bash
