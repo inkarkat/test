@@ -1,0 +1,28 @@
+name: Alert about superproject↔submodule reference differences
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref }}
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN || github.token }}
+      - uses: inkarkat/git-supersubinout@master
+        id: supersubinout
+        with:
+          fail-on-differences: true
+      - name: Check summary
+        if: failure()
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          ${{ steps.supersubinout.outputs.markdown-logs }}
+          EOF
+        shell: bash
