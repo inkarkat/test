@@ -17,13 +17,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN || github.token }}
       - uses: inkarkat/git-supersubinout@master
         id: supersubinout
-        with:
-          fail-on-differences: true
       - name: Check summary
-        if: >-
-          (success() || failure()) && fromJSON(steps.supersubinout.outputs.differences-found)
+        if: fromJSON(steps.supersubinout.outputs.differences-found)
         run: |
           cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
           ${{ steps.supersubinout.outputs.markdown-logs }}
           EOF
+          exit 1
         shell: bash
