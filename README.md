@@ -21,3 +21,4 @@ minor change
 new
 Just a test
 newer
+Just another test
