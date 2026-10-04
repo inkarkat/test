@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+- name: Invalid link
+  url: ../doesNotExist/page.php
+  about: Please ignore this one.
+- name: Discussions
+  url: //github.com/inkarkat/test/discussions
+  about: Post your feedback, questions, and ideas first in our discussions forum. Only enter a feature request here if it's already been discussed and there is a consensus that it is a good idea.
+- name: Support
+  url: https://example.com/support
+  about: Please visit our support page for assistance.
